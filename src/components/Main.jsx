@@ -30,7 +30,6 @@ export default function Main(props) {
     } else if (!isLoaded) {
         return <Loading />
     } else {
-        console.log(weatherData)
         return (
             <main>
                 <WeatherTitle 
