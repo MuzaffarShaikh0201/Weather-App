@@ -8,7 +8,7 @@ export default function Main(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [weatherData, setWeatherData] = useState({});
     const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-    const stop = 0
+    const stop = 0;
 
     useEffect(() => {
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${props.lat}&lon=${props.lon}&appid=${API_KEY}&units=metric`)
