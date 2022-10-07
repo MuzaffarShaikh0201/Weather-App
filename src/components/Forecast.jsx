@@ -6,7 +6,7 @@ export default function Forecast(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [forecastData, setForecastData] = useState({});
-    const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+    const API_KEY = "61e31751d58419aae201fce5311b2e9b";
     const stop = 0
 
     useEffect(() => {
