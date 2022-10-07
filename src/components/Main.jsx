@@ -1,5 +1,5 @@
-import WeatherDeatails from './weather_components/WeatherDetails'
-import WeatherTitle from './weather_components/WeatherTitle'
+import WeatherDeatails from './weather_components/WeatherDetails';
+import WeatherTitle from './weather_components/WeatherTitle';
 import { useEffect, useState } from 'react';
 import Loading from '../loading_animations/Loading';
 
@@ -7,7 +7,7 @@ export default function Main(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [weatherData, setWeatherData] = useState({});
-    const API_KEY = "61e31751d58419aae201fce5311b2e9b"
+    const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
     const stop = 0
 
     useEffect(() => {
