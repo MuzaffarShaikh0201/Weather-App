@@ -7,11 +7,11 @@ export default function Navbar(props) {
                 <img src={logo_img} className="logo--img" alt="." />
                 <h3 className="logo--text">Weather App</h3>
             </div>
-            <ul>
+            {/* <ul>
                 <a href={`https://www.ventusky.com/?p=${props.lat};${props.lon};8`} className="link">Map</a>
                 <a href="" className="link">About</a>
                 <a href="" className="link">Contact</a>
-            </ul>
+            </ul> */}
             <input type="text" className="search" placeholder="Search City"/>
         </nav>
     )

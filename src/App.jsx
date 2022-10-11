@@ -36,7 +36,7 @@ function App() {
     } else {
         // console.log(coordinates)
         return (
-            <>
+            <div className='app-container'>
                 <Navbar 
                     lat={coordinates[0]}
                     lon={coordinates[1]}
@@ -49,7 +49,7 @@ function App() {
                     lat={coordinates[0]}
                     lon={coordinates[1]}
                 />
-            </>
+            </div>
         )
     }
 }
