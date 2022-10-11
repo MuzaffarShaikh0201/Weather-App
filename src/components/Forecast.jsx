@@ -6,22 +6,36 @@ export default function Forecast(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [forecastData, setForecastData] = useState({});
-    const API_KEY = "61e31751d58419aae201fce5311b2e9b";
     const stop = 0
 
+    // useEffect(() => {
+    //     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${props.lat}&lon=${props.lon}&units=metric&cnt=10&appid=${API_KEY}`)
+    //     .then(res => res.json())
+    //     .then(
+    //         (result) => {
+    //             setIsLoaded(true);
+    //             setForecastData(result);
+    //         },
+    //         (error) => {
+    //             setIsLoaded(true);
+    //             setError(error);
+    //         }
+    //     )
+    // }, [stop])
+
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${props.lat}&lon=${props.lon}&units=metric&cnt=10&appid=${API_KEY}`)
-        .then(res => res.json())
-        .then(
-            (result) => {
-                setIsLoaded(true);
-                setForecastData(result);
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
-        )
+        fetch(`/.netlify/functions/serverless2?lat=${props.lat}&lng=${props.lon}`)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setForecastData(result);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
     }, [stop])
 
     if (error) {

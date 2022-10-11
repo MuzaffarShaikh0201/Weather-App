@@ -7,22 +7,21 @@ export default function Main(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [weatherData, setWeatherData] = useState({});
-    const API_KEY = "61e31751d58419aae201fce5311b2e9b";
     const stop = 0;
 
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${props.lat}&lon=${props.lon}&appid=${API_KEY}&units=metric`)
-        .then(res => res.json())
-        .then(
-            (result) => {
-                setIsLoaded(true);
-                setWeatherData(result);
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
-        )
+        fetch(`/.netlify/functions/serverless?lat=${props.lat}&lng=${props.lon}`)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setWeatherData(result);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
     }, [stop])
 
     if (error) {

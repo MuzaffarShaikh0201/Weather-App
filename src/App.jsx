@@ -34,7 +34,6 @@ function App() {
     if (!isCoords) {
         return <Loading />
     } else {
-        // console.log(coordinates)
         return (
             <div className='app-container'>
                 <Navbar 

@@ -1,6 +1,11 @@
 import logo_img from '../assets/icons8-weather-48.png'
+import { useEffect } from 'react'
 
 export default function Navbar(props) {
+    // useEffect(() => {
+    //     fetch(`/.netlify/functions/serverless?lat=${props.lat}&lng=${props.lon}`)
+    //         .then(res => console.log(res.json()))
+    // }, [])
     return (
         <nav>
             <div className="logo">
