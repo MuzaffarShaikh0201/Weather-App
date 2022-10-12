@@ -48,7 +48,7 @@ export default function Forecast(props) {
             return (
                 <Card 
                     key={item.dt}
-                    cardImg={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
+                    cardImg={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
                     weather={item.weather[0].main}
                     temp={item.main.temp}
                     time={item.dt_txt.slice(11, 13)}

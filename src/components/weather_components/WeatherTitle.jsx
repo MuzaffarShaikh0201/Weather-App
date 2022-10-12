@@ -12,7 +12,7 @@ export default function WeatherDeatails(props) {
                 <img src={location_logo} className="location-logo" alt="."/>
                 <h4 className="location-text">{props.city}, {props.country}</h4>
             </div>
-            <img src={`http://openweathermap.org/img/wn/${props.weatherIcon}@4x.png`} className="weather-title-img"/>
+            <img src={`https://openweathermap.org/img/wn/${props.weatherIcon}@4x.png`} className="weather-title-img"/>
             <h2 className="weather-name">{props.weatherMain}<span className="weather-description">{props.weatherDesc}</span></h2>
             <div className="date">{dateStr}</div>
         </div>
